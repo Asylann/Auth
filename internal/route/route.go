@@ -35,7 +35,7 @@ func (Route *Route) Run() {
 	/*route.Use(middleware.Logger(), gin.Recovery())*/
 
 	serv := service.NewService(repo, Route.Logger)
-	hd := handler.New(Route.Logger, Route.Cfg, serv)
+	hd := handler.New(Route.Logger, Route.Cfg, &serv)
 
 	route.POST("/login", hd.Login)
 	route.POST("/signup", hd.RegisterUser)

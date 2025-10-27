@@ -18,11 +18,11 @@ import (
 type Handler struct {
 	Logger        *logrus.Logger
 	Cfg           config.Config
-	Service       service.Service
+	Service       service.ServiceIT
 	emailVerifier *emailverifier.Verifier
 }
 
-func New(logger *logrus.Logger, cfg config.Config, service service.Service) Handler {
+func New(logger *logrus.Logger, cfg config.Config, service service.ServiceIT) Handler {
 	return Handler{Logger: logger, Cfg: cfg, Service: service}
 }
 
